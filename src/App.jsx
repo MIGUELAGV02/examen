@@ -9,7 +9,7 @@ const App = () => {
   // Función para obtener los datos de la API
   const fetchDatos = async () => {
     try {
-      const response = await fetch("http://localhost:8000/ver");
+      const response = await fetch("http://54.82.135.206:8000/ver");
       if (!response.ok) {
         throw new Error("Error al obtener los datos");
       }
@@ -23,7 +23,7 @@ const App = () => {
   // Función para crear un nuevo dato
   const crearDato = async () => {
     try {
-      const response = await fetch("http://localhost:8000/crear", {
+      const response = await fetch("http://54.82.135.206:8000/crear", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
