@@ -14,7 +14,7 @@ const App = () => {
         throw new Error("Error al obtener los datos");
       }
       const data = await response.json();
-      setDatos(data.datos); // Actualiza el estado con los datos obtenidos
+      setDatos(data); // Actualiza el estado con los datos obtenidos
     } catch (error) {
       console.error("Error:", error);
     }
@@ -35,7 +35,14 @@ const App = () => {
       }
       const data = await response.json();
       console.log("Dato creado:", data.dato);
-      fetchDatos(); // Actualiza la lista de datos después de crear uno nuevo
+
+      // Agrega el nuevo dato al estado `datos`
+      setDatos([...datos, data.dato]);
+
+      // Limpia el formulario
+      setNombre("");
+      setRaza("");
+      setEdad("");
     } catch (error) {
       console.error("Error:", error);
     }
@@ -48,7 +55,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Consumir API Flask desde React</h1>
+      <h1>Cxdft</h1>
 
       {/* Formulario para crear un nuevo dato */}
       <div>
